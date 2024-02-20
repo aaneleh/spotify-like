@@ -6,4 +6,6 @@
 App recriando as principais funcionalidades de interface e navegação do spotify (a principio mobile), como prática para react-native
 
 ### To do
-- 
+- Organização de diretórios e arquivos
+- Router entre as páginas
+- Card e página de playlists
