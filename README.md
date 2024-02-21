@@ -8,6 +8,7 @@ App recriando as principais funcionalidades de interface e navegação do spotif
 ### To do
 - ✅ Organização de diretórios e arquivos
 - ✅ Router entre as páginas
-- Card e página de playlists
-- Context e json com músicas e playlists
+- ✅ Card e página de playlists
+- ✅ Context de playlists e musicas
+- Popular e importar Json de musicas e playlists 
 - CSS externo
