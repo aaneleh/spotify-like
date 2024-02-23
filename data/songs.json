@@ -1,0 +1,178 @@
+[
+    {
+        "id": 0,
+        "name": "Ew",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "1",
+        "year": "2020"
+    },
+    {
+        "id": 1,
+        "name": "MODUS",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "2",
+        "year": "2020"
+    },
+    {
+        "id": 2,
+        "name": "Tick Tock",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "3",
+        "year": "2020"
+    },
+    {
+        "id": 3,
+        "name": "Daylight",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "4",
+        "year": "2020"
+    },
+    {
+        "id": 4,
+        "name": "Upgrade",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "5",
+        "year": "2020"
+    },
+    {
+        "id": 5,
+        "name": "Gimme Love",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "6",
+        "year": "2020"
+    },
+    {
+        "id": 6,
+        "name": "Run",
+        "artist":  ["Joji"],
+        "album": "Nectar",
+        "number": "7",
+        "year": "2020"
+    },
+    {
+        "id": 7,
+        "name": "De Selby (Part 1)",
+        "artist": ["Hozier"],
+        "album": "Unreal Unearth",
+        "number": "1",
+        "year": "2023"
+    },
+    {
+        "id": 8,
+        "name": "De Selby (Part 2)",
+        "artist": ["Hozier"],
+        "album": "Unreal Unearth",
+        "number": "2",
+        "year": "2023"
+    },
+    {
+        "id": 9,
+        "name": "First Time",
+        "artist": ["Hozier"],
+        "album": "Unreal Unearth",
+        "number": "3",
+        "year": "2023"
+    },
+    {
+        "id": 10,
+        "name": "Francesca",
+        "artist": ["Hozier"],
+        "album": "Unreal Unearth",
+        "number": "4",
+        "year": "2023"
+    },
+    {
+        "id": 11,
+        "name": "I, Carrion (Icarian)",
+        "artist": ["Hozier"],
+        "album": "Unreal Unearth",
+        "number": "5",
+        "year": "2023"
+    },
+    {
+        "id": 12,
+        "name": "Eat Your Young",
+        "artist": ["Hozier"],
+        "album": "Unreal Unearth",
+        "number": "6",
+        "year": "2023"
+    },
+    {
+        "id": 13,
+        "name": "Damage Gets Done",
+        "artist": ["Hozier", "Brandi Carlile"],
+        "album": "Unreal Unearth",
+        "number": "7",
+        "year": "2023"
+    },
+    {
+        "id": 14,
+        "name": "Talk Too Much",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "1",
+        "year": "2023"
+    },
+    {
+        "id": 15,
+        "name": "I Hate Boston",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "2",
+        "year": "2023"
+    },
+    {
+        "id": 16,
+        "name": "Poison Poison",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "3",
+        "year": "2023"
+    },
+    {
+        "id": 17,
+        "name": "Gemini Moon",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "4",
+        "year": "2023"
+    },
+    {
+        "id": 18,
+        "name": "Snow Angel",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "5",
+        "year": "2023"
+    },
+    {
+        "id": 19,
+        "name": "So What Now",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "6",
+        "year": "2023"
+    },
+    {
+        "id": 20,
+        "name": "The Wedding Song",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "7",
+        "year": "2023"
+    },
+    {
+        "id": 21,
+        "name": "Pretty Girls",
+        "artist": ["Reneé Rapp"],
+        "album": "Snow Angel",
+        "number": "8",
+        "year": "2023"
+    }
+]

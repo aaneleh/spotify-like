@@ -7,8 +7,7 @@ export default function Library() {
     return (
         <View style={styles.container}>
             <Text style={styles.whiteFont}>Biblioteca</Text>
-            <PlaylistCard id={0}></PlaylistCard>
-            <PlaylistCard id={1}></PlaylistCard>
+            <PlaylistCard playlistId={0}></PlaylistCard>
             <NavBar></NavBar>
         </View>
     );

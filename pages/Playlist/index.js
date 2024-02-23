@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native'
 import { useParams } from "react-router-native"
-import NavBar from '../../components/NavBar'
 import { usePlaylists } from '../../contexts/PlaylistsContext';
+import NavBar from '../../components/NavBar'
+import SongCard from '../../components/SongCard';
 
 export default function Playlist() {
     const { playlistId } = useParams()
@@ -19,6 +20,14 @@ export default function Playlist() {
                 <Text style={styles.whiteFont}>{playlistSelected.name}</Text>
                 <Text style={styles.whiteFont}>{playlistSelected.songs.length} músicas</Text>
             </View>
+            <View>
+                {
+                    playlistSelected.songs.map((song, key) => {
+                        return <SongCard songId={song} key={key}></SongCard>
+                    })
+                }
+            </View>
+
             <NavBar></NavBar>
         </View>
     );

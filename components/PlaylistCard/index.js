@@ -4,26 +4,26 @@ import { usePlaylists } from '../../contexts/PlaylistsContext';
 import { useEffect, useState } from 'react';
 
 
-export default function PlaylistCard( {id} ) {
-
+export default function PlaylistCard( {playlistId} ) {
     const { getPlaylist } = usePlaylists()
-    const [playlistSelected, setPlaylistSelected] = useState({id:'',name:'', songs:[]})
+    const [playlistSelected, setPlaylistSelected] = useState({id:'',name:'', songs:[] })
     useEffect(() => {
-        setPlaylistSelected(getPlaylist(id))
+        setPlaylistSelected(getPlaylist(playlistId))
+        console.log(playlistSelected)
     }, [])
 
     return (
         <View style={styles.container}>
             
             <Link to= {"/playlist/"+playlistSelected.id}
-            underlayColor="#f0f4f7" >
+            underlayColor="#f0f4f7">
                 <View style={styles.playlistCover}></View>
             </Link>
-            <Link to= {"/playlist/"+id}
+            <Link to= {"/playlist/"+playlistId}
             underlayColor="#f0f4f7" >
                 <View style={styles.playlistDescription}>
                     <Text style={styles.whiteFont}>{playlistSelected.name}</Text>
-                    <Text style={styles.whiteFont}>{playlistSelected.songs.length} músicas</Text>
+{/*                     <Text style={styles.whiteFont}>{playlistSelected.songs.length} músicas</Text> */}
                 </View>
             </Link>
 
