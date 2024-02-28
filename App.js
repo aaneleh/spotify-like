@@ -1,8 +1,13 @@
 import { NativeRouter, Routes, Route, Link } from "react-router-native"
+import { NativeWindStyleSheet } from "nativewind";
 import { PlaylistsProvider } from './contexts/PlaylistsContext';
 import Home from './pages/Home'
 import Library from './pages/Library'
 import Playlist from './pages/Playlist'
+
+NativeWindStyleSheet.setOutput({
+  default: "native",
+});
 
 export default function App() {
   return (

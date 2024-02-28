@@ -3,47 +3,24 @@ import { Link } from "react-router-native"
 import { usePlaylists } from '../../contexts/PlaylistsContext';
 import { useEffect, useState } from 'react';
 
-
 export default function PlaylistCard( {playlistId} ) {
     const { getPlaylist } = usePlaylists()
     const [playlistSelected, setPlaylistSelected] = useState({id:'',name:'', songs:[] })
     useEffect(() => {
         setPlaylistSelected(getPlaylist(playlistId))
-        console.log(playlistSelected)
     }, [])
 
     return (
-        <View style={styles.container}>
-            
-            <Link to= {"/playlist/"+playlistSelected.id}
-            underlayColor="#f0f4f7">
-                <View style={styles.playlistCover}></View>
+        <View className="my-4 flex flex-row justify-center align-center h-16 overflow-hidden">
+            <Link to= {"/playlist/"+playlistSelected.id}>
+                <View className="bg-black-100 w-16 h-16"></View>
             </Link>
-            <Link to= {"/playlist/"+playlistId}
-            underlayColor="#f0f4f7" >
-                <View style={styles.playlistDescription}>
-                    <Text style={styles.whiteFont}>{playlistSelected.name}</Text>
-{/*                     <Text style={styles.whiteFont}>{playlistSelected.songs.length} músicas</Text> */}
+            <Link to= {"/playlist/"+playlistId}>
+                <View className="flex flex-column align-center justify-center h-full px-4">
+                    <Text className="text-black-50">{playlistSelected.name}</Text>
+                    <Text className="text-black-50">{playlistSelected.songs.length} músicas</Text>
                 </View>
             </Link>
-
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        display: 'flex',
-        flexDirection: 'row',
-        gap: 4,
-    },
-    whiteFont: {
-        color: '#fff',
-    },
-    playlistCover: {
-        backgroundColor: '#000',
-        height: 36,
-        width: 36
-    },
-});
