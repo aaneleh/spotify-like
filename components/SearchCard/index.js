@@ -4,8 +4,7 @@ import { Link } from "react-router-native"
 import { usePlaylists } from '../../contexts/PlaylistsContext';
 import LikeButton from '../LikeButton';
 
-
-export default function SongCard( {songId} ) {
+export default function SearchCard( {songId} ) {
     const { getSong } = usePlaylists()
     const [ songSelected, setSongSelected] = useState({id: 0, name: "", artist:  [""], album: "", number: "", year: "" })
     useEffect(() => setSongSelected(getSong(songId)), [])
@@ -26,7 +25,7 @@ export default function SongCard( {songId} ) {
                         <Text className="text-black-100">•</Text>
                         <Link to= {"/artist/"+ songSelected.artist+"/"+songSelected.album}>
                             <Text className="text-black-100">{songSelected.album}</Text>
-                        </Link>                
+                        </Link>
                     </View>
                 </View>
 

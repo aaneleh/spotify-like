@@ -12,5 +12,8 @@ App recriando as principais funcionalidades de interface e navegação do spotif
 - ✅ Context de playlists e musicas
 - ✅ Popular e importar Json de musicas e playlists 
 - ✅ Instalar tailwind e fazer CSS 
-- Pesquisa de músicas e página para elas 
-- Curtir músicas para adicionar à playlist[0]
+- ✅ Pesquisa de músicas
+- ✅ Curtir músicas para adicionar à playlist[0]
+- Pagina de cada album
+- Salvar playlists localmente
+

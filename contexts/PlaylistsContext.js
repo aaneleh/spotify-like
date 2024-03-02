@@ -9,7 +9,7 @@ export function usePlaylists(){
 
 export function PlaylistsProvider( { children } ) {
 
-    /* playlists salvas localmente, localstorage? */
+    /* @todo Criar um método para salvar localmente e chamar depois de cada método que edita playlists */
 
     const [Playlists, setPlaylists] = useState([
         {
@@ -27,7 +27,6 @@ export function PlaylistsProvider( { children } ) {
                 selectedPlaylist = playlist
         }) 
         return selectedPlaylist==null ? 0 : selectedPlaylist
-        /* return Playlists.filter((playlist) => playlist.id == id)[0] */
     }
 
     function getSong(id){
@@ -37,20 +36,40 @@ export function PlaylistsProvider( { children } ) {
                 selectedSong = song
         })
         return selectedSong==null ? 0 : selectedSong
-        /* return SongsJson.filter((song) => song.id == id)[0]  */
     }
     
-    function addToPlaylist(id, songId){
-        //push songID to playlist.id == id
-        getPlaylist(id).push(songId)
+    function searchSong(search){
+        let searchUpper = search.toUpperCase()
+        let songs = []
+        SongsJson.map((song) => {
+            if(song.name.toUpperCase().includes(searchUpper) || song.album.toUpperCase() == searchUpper) {
+                songs.push(song.id)
+            } else {
+                for(let i = 0; i < song.artist.length; i++){
+                    if(song.artist[i].toUpperCase().includes(searchUpper)) {
+                        songs.push(song.id)
+                        break
+                    }
+                }
+            }
+        })
+        return songs
     }
 
-    function removeFromPlaylist(id, songId){
-        //remove item from playlist.id == id where songId = songId
+    function addToPlaylist(songId, playlistId){
+        getPlaylist(playlistId).songs.push(songId)
+    }
+
+    function removeFromPlaylist(songId, playlistId){
+        getPlaylist(playlistId).songs.map((song, key) => {
+            if(song == songId) {
+                getPlaylist(playlistId).songs.splice(key, 1)
+            }
+        })
     }
 
     return (
-        <PlaylistsContext.Provider value={ { Playlists, getPlaylist, getSong, addToPlaylist, removeFromPlaylist } }>
+        <PlaylistsContext.Provider value={ { Playlists, getPlaylist, getSong, searchSong, addToPlaylist, removeFromPlaylist } }>
             { children }
         </PlaylistsContext.Provider> 
     )
