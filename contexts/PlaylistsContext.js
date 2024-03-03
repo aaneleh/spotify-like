@@ -37,12 +37,32 @@ export function PlaylistsProvider( { children } ) {
         })
         return selectedSong==null ? 0 : selectedSong
     }
+
+    function getAlbum(albumName) {
+        let songs = []
+        SongsJson.map((song) => {
+            if(song.album == albumName) 
+                songs.push(song)
+        })
+        return songs
+    }
+
+    function getArtist(artistName) {
+        let songs = []
+        SongsJson.map((song) => {
+            song.artist.map((artist) => {
+                if(artist == artistName) 
+                    songs.push(song)
+            })
+        })
+        return songs
+    }
     
     function searchSong(search){
         let searchUpper = search.toUpperCase()
         let songs = []
         SongsJson.map((song) => {
-            if(song.name.toUpperCase().includes(searchUpper) || song.album.toUpperCase() == searchUpper) {
+            if(song.name.toUpperCase().includes(searchUpper) || song.album.toUpperCase().includes(searchUpper)) {
                 songs.push(song.id)
             } else {
                 for(let i = 0; i < song.artist.length; i++){
@@ -69,7 +89,7 @@ export function PlaylistsProvider( { children } ) {
     }
 
     return (
-        <PlaylistsContext.Provider value={ { Playlists, getPlaylist, getSong, searchSong, addToPlaylist, removeFromPlaylist } }>
+        <PlaylistsContext.Provider value={ { Playlists, getPlaylist, getSong, getAlbum, getArtist, searchSong, addToPlaylist, removeFromPlaylist } }>
             { children }
         </PlaylistsContext.Provider> 
     )

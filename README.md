@@ -14,6 +14,8 @@ App recriando as principais funcionalidades de interface e navegação do spotif
 - ✅ Instalar tailwind e fazer CSS 
 - ✅ Pesquisa de músicas
 - ✅ Curtir músicas para adicionar à playlist[0]
-- Pagina de cada album
+- ✅ Pagina de cada album e artista
 - Salvar playlists localmente
-
+- Histórico local de pesquisas, playlists, albuns e artistas acessados
+- Home "recentes"(misto de tudo), "seus artistas preferidos" (artistas), "continue ouvindo" (albuns), playlists
+- Criacao e edição de playlists

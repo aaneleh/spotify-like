@@ -12,7 +12,7 @@ export default function SongCard( {songId} ) {
 
     return (
         <View className="my-4 flex flex-row justify-start h-16 overflow-hidden bg-red-500">            
-            <Link to={"/song/"+songSelected.id}>
+            <Link to={"/album/"+songSelected.album}>
                 <View className="bg-black-100 w-16 h-16"></View>
             </Link>
 
@@ -24,7 +24,7 @@ export default function SongCard( {songId} ) {
                             <Text className="text-black-100">{songSelected.artist}</Text>
                         </Link>
                         <Text className="text-black-100">•</Text>
-                        <Link to= {"/artist/"+ songSelected.artist+"/"+songSelected.album}>
+                        <Link to= {"/album/"+ songSelected.album}>
                             <Text className="text-black-100">{songSelected.album}</Text>
                         </Link>                
                     </View>
