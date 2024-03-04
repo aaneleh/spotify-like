@@ -11,7 +11,7 @@ export default function PlaylistCard( {playlistId} ) {
     }, [])
 
     return (
-        <View className="my-4 flex flex-row justify-center align-center h-16 overflow-hidden">
+        <View className="my-4 flex flex-row justify-start align-center h-16 overflow-hidden">
             <Link to= {"/playlist/"+playlistSelected.id}>
                 <View className="bg-black-100 w-16 h-16"></View>
             </Link>

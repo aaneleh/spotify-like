@@ -15,7 +15,6 @@ App recriando as principais funcionalidades de interface e navegação do spotif
 - ✅ Pesquisa de músicas
 - ✅ Curtir músicas para adicionar à playlist[0]
 - ✅ Pagina de cada album e artista
-- Salvar playlists localmente
-- Histórico local de pesquisas, playlists, albuns e artistas acessados
-- Home "recentes"(misto de tudo), "seus artistas preferidos" (artistas), "continue ouvindo" (albuns), playlists
+- ✅ Salvar playlists localmente
+- ✅ Histórico de músicas recem curtidas e ultimos artistas acessados
 - Criacao e edição de playlists

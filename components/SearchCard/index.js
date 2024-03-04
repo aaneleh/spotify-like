@@ -19,9 +19,15 @@ export default function SearchCard( {songId} ) {
                 <View className="flex flex-column align-center justify-center h-full px-4">
                     <Text className="text-black-50">{songSelected.name}</Text>
                     <View className="flex flex-row gap-2">
-                        <Link to= {"/artist/"+ songSelected.artist}>
-                            <Text className="text-black-100">{songSelected.artist}</Text>
-                        </Link>
+                        <View className="flex flex-row">
+                            {
+                                songSelected.artist.map((artist, key) => {
+                                    return <Link key={key} to= {"/artist/"+ artist }>
+                                            <Text className="text-black-100">{key > 0 ? ", " : ""}{artist}</Text>
+                                        </Link>
+                                })
+                            }
+                        </View>
                         <Text className="text-black-100">•</Text>
                         <Link to= {"/album/"+ songSelected.album}>
                             <Text className="text-black-100">{songSelected.album}</Text>

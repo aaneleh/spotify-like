@@ -11,7 +11,7 @@ export default function SongCard( {songId} ) {
     useEffect(() => setSongSelected(getSong(songId)), [])
 
     return (
-        <View className="my-4 flex flex-row justify-start h-16 overflow-hidden bg-red-500">            
+        <View className="my-4 flex flex-row justify-start h-16 bg-red-500 " >            
             <Link to={"/album/"+songSelected.album}>
                 <View className="bg-black-100 w-16 h-16"></View>
             </Link>
@@ -20,11 +20,19 @@ export default function SongCard( {songId} ) {
                 <View className="flex flex-column align-center justify-center h-full px-4">
                     <Text className="text-black-50">{songSelected.name}</Text>
                     <View className="flex flex-row gap-2">
-                        <Link to= {"/artist/"+ songSelected.artist}>
-                            <Text className="text-black-100">{songSelected.artist}</Text>
-                        </Link>
+                        <View className="flex flex-row">
+                            {
+                                songSelected.artist.map((artist, key) => {
+                                    return <Link key={key} to= {"/artist/"+ artist }>
+                                            <Text className="text-black-100">{key > 0 ? ", " : ""}{artist}</Text>
+                                        </Link>
+                                })
+                            }
+                        </View>
+
                         <Text className="text-black-100">•</Text>
-                        <Link to= {"/album/"+ songSelected.album}>
+
+                        <Link to={"/album/"+ songSelected.album}>
                             <Text className="text-black-100">{songSelected.album}</Text>
                         </Link>                
                     </View>

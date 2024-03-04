@@ -4,10 +4,11 @@ import { usePlaylists } from '../../contexts/PlaylistsContext';
 import { useEffect, useState } from 'react';
 
 export default function LikeButton( {songId} ) {
-    const { getPlaylist, addToPlaylist, removeFromPlaylist } = usePlaylists()
+    const { getPlaylist, addToPlaylist, removeFromPlaylist, updateHistory } = usePlaylists()
     const [ isLiked, setIsLiked ] = useState(false)
 
     const checkLikes = () => {
+        if(!isLiked) updateHistory(1, songId)
         isLiked ? removeFromPlaylist(songId, 0) : addToPlaylist(songId, 0)
         setIsLiked(!isLiked)
     }

@@ -7,11 +7,11 @@ import SongCard from '../../components/SongCard';
 
 export default function Artist() {
     const { artistName } = useParams()
-    const { getArtist } = usePlaylists() 
+    const { getArtist, updateHistory } = usePlaylists() 
     const [ songs, setSongs] = useState([])
     useEffect(() => {
         setSongs(getArtist(artistName))
-        console.log(getArtist(artistName))
+        updateHistory(2, artistName)
     }, [])
 
     return (
