@@ -1,9 +1,9 @@
 import { ScrollView, Text, View } from 'react-native'
-import NavBar from '../../components/NavBar'
-import { Link } from "react-router-native"
 import { usePlaylists } from '../../contexts/PlaylistsContext';
-import PlaylistCard from '../../components/PlaylistCard'
-import SongCard from '../../components/SongCard'
+import NavBar from '../../components/NavBar'
+import SongCardHome from '../../components/SongCardHome'
+import ArtistCard from '../../components/ArtistCard'
+import PlaylistCardBig from '../../components/PlaylistCardBig'
 
 export default function Home() {
     
@@ -13,22 +13,14 @@ export default function Home() {
         <View className="flex-1 bg-black-800">
             <View className="grid items-center justify-center h-full">  
                 <ScrollView className="mb-40 flex flex-col pt-20 gap-8 w-4/5">
-{/*                 <View>
-                        <Text className="text-black-50">Recentes</Text>
-                        <View className="flex flex-col items-start pt-4">
-                            ultimos artista, albuns e playlistas acessados
-                            pega os ultimos de cada array
-                        </View>
-                    </View> 
-                    */}
                     <View>
                         <Text className="text-black-50 text-2xl">Continue ouvindo</Text>
-                        <View className="flex flex-row flex-wrap gap-y-0 gap-x-8 justify-between mr-16">
+                        <View className="flex flex-row flex-wrap gap-y-0 gap-x-8 justify-between mr-16 mt-4">
                             { // ultimas musicas favoritadas 
                                 history[1].map((song, key) => {
                                     return (
-                                        <View className="w-72" key={key}>
-                                            <SongCard songId={song}></SongCard>
+                                        <View className="w-72 bg-black-500 rounded m-4 pr-6" key={key}>
+                                            <SongCardHome songId={song}></SongCardHome>
                                         </View>
                                     )
                                 })
@@ -37,12 +29,14 @@ export default function Home() {
                     </View>
                     <View>
                         <Text className="text-black-50 text-2xl">Artistas recentes</Text>
-                        <View className="flex flex-col items-start py-4 gap-4">
+                        <View className="flex flex-row flex-wrap gap-y-0 gap-x-8 justify-between mr-16">
                             {
                                 history[2].map((artistName, key) => {
-                                    return <Link to={"artist/"+artistName} key={key}>
-                                        <Text className="text-black-50">{artistName}</Text>
-                                    </Link>
+                                    return (
+                                        <View key={key}>
+                                            <ArtistCard artistName={artistName}></ArtistCard>
+                                        </View>
+                                    )
                                 })
                             }
                         </View>
@@ -55,7 +49,7 @@ export default function Home() {
                                     if(key < 6) 
                                         return (
                                             <View className="w-72" key={key}>
-                                                <PlaylistCard playlistId={playlist.id}></PlaylistCard>
+                                                <PlaylistCardBig playlistId={playlist.id}></PlaylistCardBig>
                                             </View>
                                         )
                                 })

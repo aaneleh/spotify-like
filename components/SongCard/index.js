@@ -4,7 +4,6 @@ import { Link } from "react-router-native"
 import { usePlaylists } from '../../contexts/PlaylistsContext';
 import LikeButton from '../LikeButton';
 
-
 export default function SongCard( {songId} ) {
     const { getSong } = usePlaylists()
     const [ songSelected, setSongSelected] = useState({id: 0, name: "", artist:  [""], album: "", number: "", year: "" })

@@ -1,5 +1,6 @@
 import { useContext, createContext, useState, useEffect } from 'react'
 import SongsJson from '../data/songs.json'
+/* import SyncStorage from 'sync-storage'; */
 
 const PlaylistsContext = createContext({});
 
@@ -24,10 +25,18 @@ export function PlaylistsProvider( { children } ) {
     ])
     
     useEffect(() => {
+        
         if(localStorage.getItem("playlists") !== null) 
             setPlaylists(JSON.parse(localStorage.getItem("playlists")))
         if(localStorage.getItem("history") !== null) 
             setHistory(JSON.parse(localStorage.getItem("history")))
+
+/*             
+        if(SyncStorage.getItem("playlists") !== null) 
+            setPlaylists(JSON.parse(SyncStorage.getItem("playlists")))
+        if(SyncStorage.getItem("history") !== null) 
+            setHistory(JSON.parse(SyncStorage.getItem("history"))) */
+
     }, [])
     
     function updateHistory(index, value){
@@ -40,10 +49,12 @@ export function PlaylistsProvider( { children } ) {
 
     function savePlaylists(){
         localStorage.setItem("playlists", JSON.stringify(playlists))
+/*         SyncStorage.setItem("playlists", JSON.stringify(playlists)) */
     }
     
     function saveHistory(){
         localStorage.setItem("history", JSON.stringify(history))
+/*         SyncStorage.setItem("history", JSON.stringify(history)) */
     }
 
     function getPlaylist(id){
@@ -116,8 +127,18 @@ export function PlaylistsProvider( { children } ) {
         savePlaylists()
     }
 
+    function createPlaylist(playlistName){
+        console.log(playlists)
+        const newPlaylist = {
+            id: playlists[playlists.length-1].id + 1,
+            name: playlistName,
+            songs: [] }
+        setPlaylists((old) => [...old, newPlaylist])
+        savePlaylists()
+    }
+
     return (
-        <PlaylistsContext.Provider value={ { playlists, history, updateHistory, getPlaylist, getSong, getAlbum, getArtist, searchSong, addToPlaylist, removeFromPlaylist } }>
+        <PlaylistsContext.Provider value={ { playlists, history, updateHistory, getPlaylist, getSong, getAlbum, getArtist, searchSong, addToPlaylist, removeFromPlaylist, createPlaylist } }>
             { children }
         </PlaylistsContext.Provider> 
     )

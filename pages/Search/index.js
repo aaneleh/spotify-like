@@ -3,7 +3,7 @@ import { ScrollView, Text, View, TextInput, Pressable, KeyboardAvoidingView, Key
 import { usePlaylists } from '../../contexts/PlaylistsContext';
 import NavBar from '../../components/NavBar'
 import { Svg, Path } from 'react-native-svg'
-import SearchCard from '../../components/SearchCard';
+import SongCard from '../../components/SongCard';
 
 export default function Search() {
     const { searchSong } = usePlaylists()
@@ -39,7 +39,7 @@ export default function Search() {
                     <Text className="text-black-50 py-8">Resultados para: {searchText}</Text>
                     {
                         searchResults.map((id, key) => {
-                            return <SearchCard songId={id} key={key}></SearchCard>
+                            return <SongCard songId={id} key={key}></SongCard>
                         })
                     }
                 </ScrollView>

@@ -4,15 +4,15 @@ import { Link } from "react-router-native"
 import { usePlaylists } from '../../contexts/PlaylistsContext';
 import LikeButton from '../LikeButton';
 
-export default function SearchCard( {songId} ) {
+export default function SongCardHome( {songId} ) {
     const { getSong } = usePlaylists()
     const [ songSelected, setSongSelected] = useState({id: 0, name: "", artist:  [""], album: "", number: "", year: "" })
     useEffect(() => setSongSelected(getSong(songId)), [])
 
     return (
-        <View className="my-4 flex flex-row justify-start h-16 overflow-hidden bg-red-500">            
+        <View className="flex flex-row justify-start h-16 ">            
             <Link to={"/album/"+songSelected.album}>
-                <View className="bg-black-100 w-16 h-16"></View>
+                <View className="bg-black-100 w-16 h-16 rounded-l"></View>
             </Link>
 
             <View className="flex flex-row items-center justify-between w-4/5">
@@ -28,10 +28,12 @@ export default function SearchCard( {songId} ) {
                                 })
                             }
                         </View>
+
                         <Text className="text-black-100">•</Text>
-                        <Link to= {"/album/"+ songSelected.album}>
+
+                        <Link to={"/album/"+ songSelected.album}>
                             <Text className="text-black-100">{songSelected.album}</Text>
-                        </Link>
+                        </Link>                
                     </View>
                 </View>
 
