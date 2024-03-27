@@ -128,7 +128,6 @@ export function PlaylistsProvider( { children } ) {
     }
 
     function createPlaylist(playlistName){
-        console.log(playlists)
         const newPlaylist = {
             id: playlists[playlists.length-1].id + 1,
             name: playlistName,
@@ -136,9 +135,23 @@ export function PlaylistsProvider( { children } ) {
         setPlaylists((old) => [...old, newPlaylist])
         savePlaylists()
     }
+    function deletePlaylist(playlistId){
+        let pos;
+        playlists.map((playlist, index) => {
+            if(playlist.id == playlistId) 
+                pos = index
+        }) 
+        playlists.splice(pos, 1);
+    }
+    function editPlaylist(playlistId, playlistNewName){
+        playlists.map((playlist) => {
+            if(playlist.id == playlistId) 
+                playlist.name = playlistNewName
+        }) 
+    }
 
     return (
-        <PlaylistsContext.Provider value={ { playlists, history, updateHistory, getPlaylist, getSong, getAlbum, getArtist, searchSong, addToPlaylist, removeFromPlaylist, createPlaylist } }>
+        <PlaylistsContext.Provider value={ { playlists, history, updateHistory, getPlaylist, getSong, getAlbum, getArtist, searchSong, addToPlaylist, removeFromPlaylist, createPlaylist, editPlaylist, deletePlaylist } }>
             { children }
         </PlaylistsContext.Provider> 
     )

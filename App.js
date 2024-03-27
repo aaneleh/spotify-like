@@ -8,6 +8,7 @@ import Playlist from './pages/Playlist'
 import Album from './pages/Album'
 import Artist from "./pages/Artist";
 import NewPlaylist from "./pages/NewPlaylist";
+import EditPlaylist from "./pages/EditPlaylist";
 
 NativeWindStyleSheet.setOutput({
   default: "native",
@@ -25,6 +26,7 @@ export default function App() {
           <Route path="/album/:albumName" element={ <Album/> } />
           <Route path="/artist/:artistName" element={ <Artist/> } />
           <Route path="/new-playlist" element={ <NewPlaylist/> } />
+          <Route path="/edit-playlist/:playlistId" element={ <EditPlaylist/> } />
         </Routes>
       </PlaylistsProvider>
     </NativeRouter>

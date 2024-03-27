@@ -1,20 +1,25 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Text, View, KeyboardAvoidingView, TextInput, Pressable, Platform } from 'react-native'
-import { Link, useNavigate } from "react-router-native";
+import { useParams, Link, useNavigate } from "react-router-native";
 import { Svg, Path } from 'react-native-svg'
 
 import { usePlaylists } from '../../contexts/PlaylistsContext';
 
-export default function NewPlaylist() {
+export default function EditPlaylist() {
     const navigate = useNavigate()
-    const { createPlaylist } = usePlaylists()
-    const [ playlistName, setPlaylistName ] = useState("")
+    const { playlistId } = useParams()
+    const { getPlaylist, editPlaylist } = usePlaylists()
+    const [ playlistName, setPlaylistName ] = useState()
 
-    const newPlaylist = () => {
+    useEffect(()=> {
+        setPlaylistName(getPlaylist(playlistId).name)
+    }, [])
+
+    const handleEdit = () => {
         if(playlistName == '' || playlistName == null){
             alert("Insira um nome válido!")
         } else {
-            createPlaylist(playlistName)
+            editPlaylist(playlistId, playlistName)
             navigate("/biblioteca")
         }
     }
@@ -30,18 +35,18 @@ export default function NewPlaylist() {
                 </View>
 
                 <View className="flex h-full items-center justify-center gap-16">
-                    <Text className="text-black-50 text-2xl font-bold">Dê um nome à sua playlist</Text>
+                    <Text className="text-black-50 text-2xl font-bold">Renomeando playlist</Text>
                     <View>
                         <TextInput 
                         className="text-black-50 text-lg border-b-2 border-black-50"
                         placeholder='Minha playlist'
                         value={playlistName}
                         onChangeText={(e) => setPlaylistName(e)}
-                        onSubmitEditing={()=> newPlaylist()}
+                        onSubmitEditing={()=> handleEdit()}
                         />
                     </View>
                     <Pressable className="bg-green w-20 rounded-full p-2"
-                    onPress={() => newPlaylist()}>
+                    onPress={() => handleEdit()}>
                         <Text className="text-center">
                             Criar
                         </Text>
