@@ -3,6 +3,7 @@ import { Text, View, Platform } from 'react-native';
 import { Link } from "react-router-native";
 
 export default function NavBar() {
+
     return (
         <View className= {`flex-1 bg-black-1000 w-full py-8 ${Platform.OS == 'web' ? "absolute bottom-0" : "absolute bottom-0"}`}>
             <View className="flex flex-row items-center justify-evenly">

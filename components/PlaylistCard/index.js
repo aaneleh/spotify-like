@@ -11,16 +11,17 @@ export default function PlaylistCard( {playlistId} ) {
     }, [])
 
     return (
-        <View className="my-4 flex flex-row justify-start align-center h-16 overflow-hidden">
+        <View>
             <Link to= {"/playlist/"+playlistSelected.id}>
-                <View className="bg-black-100 w-16 h-16"></View>
-            </Link>
-            <Link to= {"/playlist/"+playlistId}>
-                <View className="flex flex-column align-center justify-center h-full px-4">
-                    <Text className="text-black-50">{playlistSelected.name}</Text>
-                    <Text className="text-black-50">{playlistSelected.songs.length} músicas</Text>
+                <View className="my-4 flex flex-row justify-start align-center w-screen h-16 overflow-hidden">
+                    <View className="bg-black-100 w-16 h-16"></View>
+                    <View className="flex flex-column align-center justify-center h-full px-4">
+                        <Text className="text-black-50">{playlistSelected.name}</Text>
+                        <Text className="text-black-50">{playlistSelected.songs.length} músicas</Text>
+                    </View>
                 </View>
             </Link>
         </View>
+        
     );
 }

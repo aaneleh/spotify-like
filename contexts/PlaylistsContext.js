@@ -1,6 +1,7 @@
 import { useContext, createContext, useState, useEffect } from 'react'
 import SongsJson from '../data/songs.json'
-/* import SyncStorage from 'sync-storage'; */
+
+import LocalStorage from './LocalStorage';
 
 const PlaylistsContext = createContext({});
 
@@ -26,16 +27,44 @@ export function PlaylistsProvider( { children } ) {
     
     useEffect(() => {
         
-        if(localStorage.getItem("playlists") !== null) 
+/*         if(localStorage.getItem("playlists") !== null) 
             setPlaylists(JSON.parse(localStorage.getItem("playlists")))
         if(localStorage.getItem("history") !== null) 
-            setHistory(JSON.parse(localStorage.getItem("history")))
+            setHistory(JSON.parse(localStorage.getItem("history"))) */
 
-/*             
-        if(SyncStorage.getItem("playlists") !== null) 
-            setPlaylists(JSON.parse(SyncStorage.getItem("playlists")))
-        if(SyncStorage.getItem("history") !== null) 
-            setHistory(JSON.parse(SyncStorage.getItem("history"))) */
+            LocalStorage.load({
+                key: 'playlists',
+                autoSync: true,
+                syncInBackground: true,
+            }).then(ret => {
+                console.log(ret)
+                setPlaylists(ret)
+            }).catch(err => {
+                console.warn(err)
+                LocalStorage.save({
+                    key: 'playlists',
+                    data: playlists,
+                    expires: null
+                });
+            })
+
+
+            LocalStorage.load({
+                key: 'history',
+                autoSync: true,
+                syncInBackground: true,
+            }).then(ret => {
+                console.log(ret)
+                setHistory(history)
+            }).catch(err => {
+                console.warn(err)
+                LocalStorage.save({
+                    key: 'history',
+                    data: history,
+                    expires: null
+                });
+            })
+
 
     }, [])
     
@@ -48,13 +77,23 @@ export function PlaylistsProvider( { children } ) {
     }
 
     function savePlaylists(){
-        localStorage.setItem("playlists", JSON.stringify(playlists))
-/*         SyncStorage.setItem("playlists", JSON.stringify(playlists)) */
+/*         localStorage.setItem("playlists", JSON.stringify(playlists)) */
+
+        LocalStorage.save({
+            key: 'playlists',
+            data: playlists,
+            expires: null
+        });
     }
     
     function saveHistory(){
-        localStorage.setItem("history", JSON.stringify(history))
-/*         SyncStorage.setItem("history", JSON.stringify(history)) */
+/*         localStorage.setItem("history", JSON.stringify(history)) */
+
+        LocalStorage.save({
+            key: 'history',
+            data: history,
+            expires: null
+        });
     }
 
     function getPlaylist(id){
@@ -116,6 +155,7 @@ export function PlaylistsProvider( { children } ) {
     function addToPlaylist(songId, playlistId){
         getPlaylist(playlistId).songs.push(songId)
         savePlaylists()
+        console.log(playlists)
     }
 
     function removeFromPlaylist(songId, playlistId){
@@ -125,6 +165,7 @@ export function PlaylistsProvider( { children } ) {
             }
         })
         savePlaylists()
+        console.log(playlists)
     }
 
     function createPlaylist(playlistName){
