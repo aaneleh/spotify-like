@@ -26,18 +26,13 @@ export function PlaylistsProvider( { children } ) {
     ])
     
     useEffect(() => {
-        
-/*         if(localStorage.getItem("playlists") !== null) 
-            setPlaylists(JSON.parse(localStorage.getItem("playlists")))
-        if(localStorage.getItem("history") !== null) 
-            setHistory(JSON.parse(localStorage.getItem("history"))) */
 
+            //Atualiza playlist de acordo com localStorage
             LocalStorage.load({
                 key: 'playlists',
                 autoSync: true,
                 syncInBackground: true,
             }).then(ret => {
-                console.log(ret)
                 setPlaylists(ret)
             }).catch(err => {
                 console.warn(err)
@@ -47,14 +42,12 @@ export function PlaylistsProvider( { children } ) {
                     expires: null
                 });
             })
-
-
+            //Atualiza histórico home de acordo com localStorage
             LocalStorage.load({
                 key: 'history',
                 autoSync: true,
                 syncInBackground: true,
             }).then(ret => {
-                console.log(ret)
                 setHistory(history)
             }).catch(err => {
                 console.warn(err)
@@ -64,7 +57,6 @@ export function PlaylistsProvider( { children } ) {
                     expires: null
                 });
             })
-
 
     }, [])
     
@@ -77,8 +69,6 @@ export function PlaylistsProvider( { children } ) {
     }
 
     function savePlaylists(){
-/*         localStorage.setItem("playlists", JSON.stringify(playlists)) */
-
         LocalStorage.save({
             key: 'playlists',
             data: playlists,
@@ -87,8 +77,6 @@ export function PlaylistsProvider( { children } ) {
     }
     
     function saveHistory(){
-/*         localStorage.setItem("history", JSON.stringify(history)) */
-
         LocalStorage.save({
             key: 'history',
             data: history,
@@ -155,7 +143,6 @@ export function PlaylistsProvider( { children } ) {
     function addToPlaylist(songId, playlistId){
         getPlaylist(playlistId).songs.push(songId)
         savePlaylists()
-        console.log(playlists)
     }
 
     function removeFromPlaylist(songId, playlistId){
@@ -165,7 +152,6 @@ export function PlaylistsProvider( { children } ) {
             }
         })
         savePlaylists()
-        console.log(playlists)
     }
 
     function createPlaylist(playlistName){

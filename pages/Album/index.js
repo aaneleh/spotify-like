@@ -22,7 +22,7 @@ export default function Album() {
                 <View className="py-8">
                     <Text className="text-black-50 text-2xl">{albumName}</Text>
                     <Text className="text-black-50 text-xl">{artist}</Text>
-                    <Text className="text-black-50 text-xl">{songs.length} músicas</Text>
+                    <Text className="text-black-100 text-l">{songs.length} músicas</Text>
                 </View>
                 <View className="flex flex-col align-start justify-start">
                     {

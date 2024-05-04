@@ -8,6 +8,8 @@ import { useEffect, useState } from 'react';
 export default function Menu( {songId, trigger, setTrigger} ) {
     const { playlists, getSong, addToPlaylist, removeFromPlaylist } = usePlaylists()
 
+    
+
     const handleAdd = (playlistId) => {
         addToPlaylist(songId, playlistId)
         setTrigger(false)
@@ -18,11 +20,11 @@ export default function Menu( {songId, trigger, setTrigger} ) {
     }
 
     return (trigger) ? (
-        <View className="bg-black-700 w-48 p-4 rounded absolute z-100 -top-4 right-[25%]">
+        <View className="bg-black-700 w-50 h-48 p-4 overflow-scroll rounded absolute z-1000 -bottom-8 right-[20%]">
             <Text className="text-black-50">
                 Adicionar {getSong(songId).name} à playlist:
             </Text>
-            <View className="flex flex-col gap-2 pt-2 w-full"> 
+            <View className="flex flex-col gap-2 pt-2 w-full h-full "> 
                 {
                     playlists.map((p, key)=> {
                         return <View className="flex flex-row items-center w-full justify-between p-2 rounded bg-black-500 " key={key}>

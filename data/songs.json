@@ -5,7 +5,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "1",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 1,
@@ -13,7 +14,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "2",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 2,
@@ -21,7 +23,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "3",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 3,
@@ -29,7 +32,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "4",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 4,
@@ -37,7 +41,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "5",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 5,
@@ -45,7 +50,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "6",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 6,
@@ -53,7 +59,8 @@
         "artist":  ["Joji"],
         "album": "Nectar",
         "number": "7",
-        "year": "2020"
+        "year": "2020",
+        "albumCover": "nectar.jpg"
     },
     {
         "id": 7,
@@ -61,7 +68,8 @@
         "artist": ["Hozier"],
         "album": "Unreal Unearth",
         "number": "1",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 8,
@@ -69,7 +77,8 @@
         "artist": ["Hozier"],
         "album": "Unreal Unearth",
         "number": "2",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 9,
@@ -77,7 +86,8 @@
         "artist": ["Hozier"],
         "album": "Unreal Unearth",
         "number": "3",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 10,
@@ -85,7 +95,8 @@
         "artist": ["Hozier"],
         "album": "Unreal Unearth",
         "number": "4",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 11,
@@ -93,7 +104,8 @@
         "artist": ["Hozier"],
         "album": "Unreal Unearth",
         "number": "5",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 12,
@@ -101,7 +113,8 @@
         "artist": ["Hozier"],
         "album": "Unreal Unearth",
         "number": "6",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 13,
@@ -109,7 +122,8 @@
         "artist": ["Hozier", "Brandi Carlile"],
         "album": "Unreal Unearth",
         "number": "7",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "unreal_unearth.jpg"
     },
     {
         "id": 14,
@@ -117,7 +131,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "1",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 15,
@@ -125,7 +140,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "2",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 16,
@@ -133,7 +149,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "3",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 17,
@@ -141,7 +158,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "4",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 18,
@@ -149,7 +167,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "5",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 19,
@@ -157,7 +176,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "6",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 20,
@@ -165,7 +185,8 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "7",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     },
     {
         "id": 21,
@@ -173,6 +194,7 @@
         "artist": ["Reneé Rapp"],
         "album": "Snow Angel",
         "number": "8",
-        "year": "2023"
+        "year": "2023",
+        "albumCover": "snow_angel.jpg"
     }
 ]

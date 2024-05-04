@@ -20,7 +20,7 @@ export default function Home() {
                 <ScrollView className="mb-40 flex flex-col gap-8 w-full ">
                     <View>
                         <Text className="text-black-50 text-2xl">Continue ouvindo</Text>
-                        <View className="flex flex-row flex-wrap gap-y-0 gap-x-8 justify-between mr-16 mt-4">
+                        <View className="flex flex-row flex-wrap gap-y-0 gap-x-8 justify-between mr-16 mt-4 max-w-[800px]">
                             { // ultimas musicas favoritadas 
                                 history[1].map((song, key) => {
                                     return (

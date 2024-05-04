@@ -17,3 +17,4 @@ App recriando as principais funcionalidades de interface e navegação do spotif
 - ✅ Criacao, edição e exclusão de playlists
 - ✅ Menu para adicionar música a uma playlist específica 
 - ✅ Armazenamento local de playlists e histórico
+- ✅ Capa dos albuns
