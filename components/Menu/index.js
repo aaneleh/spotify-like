@@ -8,8 +8,6 @@ import { useEffect, useState } from 'react';
 export default function Menu( {songId, trigger, setTrigger} ) {
     const { playlists, getSong, addToPlaylist, removeFromPlaylist } = usePlaylists()
 
-    
-
     const handleAdd = (playlistId) => {
         addToPlaylist(songId, playlistId)
         setTrigger(false)

@@ -39,7 +39,6 @@ export default function Search() {
                     <Text className="text-black-50 py-8">Resultados para: {searchText}</Text>
                     {
                         searchResults.map((id) => {
-                            console.log(id)
                             return <SongCard songId={id} key={id}></SongCard>
                         })
                     }
