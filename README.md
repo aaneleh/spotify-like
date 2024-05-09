@@ -1,6 +1,6 @@
 # spotify-like 🎧
 
-![GitHub last commit](https://img.shields.io/github/last-commit/aaneleh/spotify-like) [wakatime](https://wakatime.com/badge/user/63a62ebf-02b8-40ab-b01b-99f672dace05/project/018dc4a4-4bfc-4c1e-8407-957d2b257dcc.svg) [![Badge twitter](https://img.shields.io/twitter/follow/helena_kurzzz)](https://twitter.com/helena_kurzzz)
+![GitHub last commit](https://img.shields.io/github/last-commit/aaneleh/spotify-like) ![wakatime](https://wakatime.com/badge/user/63a62ebf-02b8-40ab-b01b-99f672dace05/project/018dc4a4-4bfc-4c1e-8407-957d2b257dcc.svg) [![Badge twitter](https://img.shields.io/twitter/follow/helena_kurzzz)](https://twitter.com/helena_kurzzz)
 
 Expo app recriando as principais funcionalidades de interface e navegação do spotify como prática de react-native.
 
